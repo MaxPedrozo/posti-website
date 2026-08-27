@@ -1,0 +1,74 @@
+[
+    {
+        "id": "20260119203048",
+        "title": "What is COBOL?",
+        "category": "Engineering",
+        "date": "2026-01-19",
+        "excerpt": "Common business-oriented language (COBOL) is a high-level, English-like, compiled programming language that is developed specifically for business data processing needs.",
+        "image": "assets/cobol.jpg",
+        "url": "posts/what-is-cobol.html"
+    },
+    {
+        "id": "20260119195435",
+        "title": "Billion-Dollar Data Centers Are Taking Over the World",
+        "category": "Engineering",
+        "date": "2026-01-19",
+        "excerpt": "The battle for AI dominance has left a large footprint\u2014and it\u2019s only getting bigger and more expensive.",
+        "image": "assets/Data_Center_Takeover.jpg",
+        "url": "posts/billion-dollar-data-centers-are-taking-over-the-world.html"
+    },
+    {
+        "id": "202601151043",
+        "title": "Snowflake vs. Databricks. A look for the best data engineering and BI tools.",
+        "category": "Engineering",
+        "date": "2026-01-14",
+        "excerpt": "A Technical Comparison for Modern Data Platforms. A Technical Comparison for Modern Data Platforms a Technical Comparation a Technical Comparison for Modern Data Platforms. A Technical Comparison for Modern Data Platforms a Technical Comparation.",
+        "image": "assets/snowflake-databricks.png",
+        "url": "posts/snowflake-vs-databricks.html"
+    },
+    {
+        "id": "20260115125547",
+        "title": "Business Intelligence in 2025: Where We Are and What\u2019s Coming in 2026",
+        "category": "Strategic Data",
+        "date": "2026-01-15",
+        "excerpt": "Business Intelligence (BI) in 2025 is no longer just about dashboards and reports. It has become a strategic layer that combines artificial intelligence, automation, and data governance to drive faster and smarter decision-making. As we approach 2026, BI is evolving toward more predictive, conversational, and democratized experiences.",
+        "image": "assets/Futuro_BI_ IA_democratizacion.png",
+        "url": "posts/business-intelligence-in-2025-where-we-are-and-whats-coming-in-2026.html"
+    },
+    {
+        "id": "20260115125927",
+        "title": "The State of BI in 2025",
+        "category": "Strategic Data",
+        "date": "2026-01-15",
+        "excerpt": "In 2025, Business Intelligence sits at the intersection of analytics, AI, and business strategy. Organizations have largely moved beyond traditional descriptive analytics and now expect BI platforms to explain, predict, and recommend actions.",
+        "image": "assets/Futuro_BI_ IA_democratizacion.png",
+        "url": "posts/the-state-of-bi-in-2025.html"
+    },
+    {
+        "id": "20260115131523",
+        "title": "Edge Intelligence: Why the Future is Moving Closer to the User.",
+        "category": "Strategic Data",
+        "date": "2026-01-15",
+        "excerpt": "If 2024 and 2025 were the years of \"Total Cloud,\" 2026 is the year of Edge Intelligence. This paradigm shift involves processing AI directly on the user's device or the factory sensor, rather than waiting for data to travel to a central server.",
+        "image": "assets/Futuro_BI_ IA_democratizacion.png",
+        "url": "posts/edge-intelligence-why-the-future-is-moving-closer-to-the-user.html"
+    },
+    {
+        "id": "20260115190948",
+        "title": "Developing",
+        "category": "Engineering",
+        "date": "2026-01-15",
+        "excerpt": "",
+        "image": "assets/Futuro_BI_ IA_democratizacion.png",
+        "url": "posts/developing.html"
+    },
+    {
+        "id": "20260119123536",
+        "title": "The Race to Build the DeepSeek of Europe Is On",
+        "category": "Innovation",
+        "date": "2026-01-19",
+        "excerpt": "With rare exceptions, US-based firms outstrip European competitors across the AI production line\u2014from processor design and manufacturing, to datacenter capacity, to model and application development.",
+        "image": "assets/DeepSeek-Europe-Race-Business.jpg",
+        "url": "posts/the-race-to-build-the-deepseek-of-europe-is-on.html"
+    }
+]

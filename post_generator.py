@@ -1,0 +1,134 @@
+import json
+import os
+import re # Added for text cleaning
+from datetime import datetime
+
+def slugify(text):
+    """ Converts title to a clean filename: 'Hello World!' -> 'hello-world.html' """
+    text = text.lower()
+    text = re.sub(r'[^\w\s-]', '', text)
+    return re.sub(r'[-\s]+', '-', text).strip('-') + ".html"
+
+def create_post():
+    print("--- POSTI Strategic Post Generator ---")
+    
+    title = input("Article Title: ")
+    # Suggest a clean filename based on the title
+    suggested_filename = slugify(title)
+    
+    filename = input(f"Filename (Press Enter for '{suggested_filename}'): ")
+    if not filename:
+        filename = suggested_filename
+    
+    # 1. Gather Input
+    # title = input("Article Title: ")
+    category = input("Category (e.g., Strategic Data, Engineering, Innovation): ")
+    excerpt = input("Short Excerpt: ")
+    content_p1 = input("Main Content 1: ")
+    quote = input("Strategic Quote: ")
+    content_p2 = input("Main Content 2: ")
+    # filename = input("Filename (e.g., trends.html): ")
+    image_url = input("Image path (e.g., assets/image.jpg): ")
+
+    # 2. Data for JSON
+    date_today = datetime.now().strftime("%Y-%m-%d")
+    post_id = datetime.now().strftime("%Y%m%d%H%M%S")
+    
+    new_entry = {
+        "id": post_id,
+        "title": title,
+        "category": category,
+        "date": date_today,
+        "excerpt": excerpt,
+        "image": image_url.replace("\\", "/"),
+        "url": f"posts/{filename}"
+    }
+
+    # 3. HTML Template (Note the double {{ }} for CSS)
+    html_template = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title} | POSTI Strategic Journal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {{ font-family: 'Inter', sans-serif; line-height: 1.8; }}
+        .glass {{ background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); }}
+        .prose p {{ margin-bottom: 1.5rem; color: #475569; font-size: 1.125rem; }}
+        .prose h2 {{ font-size: 1.875rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1.25rem; color: #0f172a; }}
+    </style>
+</head>
+<body class="bg-white text-slate-900">
+
+    <nav class="fixed w-full z-50 glass border-b border-slate-300">
+        <div class="max-w-6xl mx-auto px-6 h-24 flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-2 group">
+                <img src="../assets/logo.png" alt="POSTI Logo" class="h-12 md:h-20 w-auto group-hover:opacity-80 transition-opacity">
+                <span class="text-4xl font-bold tracking-tighter text-slate-900 group-hover:text-blue-600 transition-colors">POSTI</span>
+            </a>
+            <a href="../blog.html" class="text-sm font-bold text-blue-600 hover:text-blue-800 flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Back to Journal
+            </a>
+        </div>
+    </nav>
+
+    <article class="max-w-5xl mx-auto pt-40 pb-20 px-6">
+        <span class="bg-blue-50 text-blue-600 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">{category}</span>
+        <span class="text-slate-400 text-xs font-medium">Published on {date_today}</span>
+        <h1 class="text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight mt-6 mb-8">{title}</h1>
+        
+        <div class="flex items-center gap-4 border-y border-slate-100 py-6 mb-12">
+            <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xs">PO</div>
+            <div>
+                <p class="text-sm font-bold text-slate-900">Pedrozo Ortega</p>
+                <p class="text-xs text-slate-500">Chief Strategic Officer</p>
+            </div>
+        </div>
+
+        <img src="../{image_url}" class="w-3/4 mx-auto rounded-[2rem] mb-12 shadow-2xl">
+        
+        <div class="prose">
+            <p><strong>{excerpt}</strong></p>
+            <p>{content_p1}</p>
+            <blockquote class="border-l-4 border-blue-600 pl-6 my-10 italic text-2xl text-blue-600 leading-relaxed">
+                "{quote}"
+            </blockquote>
+            <p>{content_p2}</p>
+        </div>
+    </article>
+
+    <footer class="py-12 border-t border-slate-300 text-center text-slate-500 text-[10px] uppercase tracking-widest font-bold">
+        © 2026 POSTI - Strategic Tech Innovations.
+    </footer>
+</body>
+</html>"""
+
+    # Ensure the directory exists
+    if not os.path.exists('posts'):
+        os.makedirs('posts')
+
+    # Save HTML file
+    with open(f"posts/{filename}", "w", encoding="utf-8") as f:
+        f.write(html_template)
+
+    # 4. Update data.json
+    data = []
+    if os.path.exists('data.json'):
+        with open('data.json', 'r', encoding="utf-8") as f:
+            try:
+                data = json.load(f)
+            except json.JSONDecodeError:
+                data = []
+    
+    data.append(new_entry)
+    
+    with open('data.json', 'w', encoding="utf-8") as f:
+        json.dump(data, f, indent=4)
+
+    print(f"\n🚀 Success! '{filename}' created and data.json updated.")
+
+if __name__ == "__main__":
+    create_post()

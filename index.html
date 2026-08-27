@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POSTI | Engineering for Intelligent Business</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
+    <style>
+        /* ===== BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        /* ===== DARK MODE ===== */
+        body.dark-mode {
+            background: #0a0c10;
+            color: #f1f5f9;
+        }
+        body.dark-mode .bg-white {
+            background: #11141b !important;
+        }
+        body.dark-mode .bg-slate-50 {
+            background: #0d0f14 !important;
+        }
+        body.dark-mode .border-slate-100 {
+            border-color: #1e293b !important;
+        }
+        body.dark-mode .border-slate-200 {
+            border-color: #1e293b !important;
+        }
+        body.dark-mode .text-slate-900 {
+            color: #f1f5f9 !important;
+        }
+        body.dark-mode .text-slate-500,
+        body.dark-mode .text-slate-600 {
+            color: #94a3b8 !important;
+        }
+        body.dark-mode .text-slate-400 {
+            color: #64748b !important;
+        }
+        body.dark-mode .bg-slate-100 {
+            background: #1e293b !important;
+        }
+        body.dark-mode .bg-slate-50 {
+            background: #0d0f14 !important;
+        }
+        body.dark-mode .glass-nav {
+            background: rgba(10, 12, 16, 0.92) !important;
+            backdrop-filter: blur(16px) saturate(180%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
+        }
+        body.dark-mode .card-hover {
+            background: #11141b !important;
+            border-color: #1e293b !important;
+        }
+        body.dark-mode .product-tag {
+            background: #1e293b !important;
+            border-color: #334155 !important;
+            color: #93c5fd !important;
+        }
+        body.dark-mode .gradient-text {
+            background: linear-gradient(135deg, #60a5fa 0%, #2563eb 60%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        body.dark-mode .gradient-text-light {
+            background: linear-gradient(135deg, #f1f5f9 0%, #93c5fd 60%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        body.dark-mode .glass-nav a {
+            color: #94a3b8 !important;
+        }
+        body.dark-mode .glass-nav a:hover {
+            color: #60a5fa !important;
+        }
+        body.dark-mode footer {
+            background: #0a0c10 !important;
+            border-color: #1e293b !important;
+        }
+        body.dark-mode .bg-slate-900 {
+            background: #0a0c10 !important;
+        }
+        body.dark-mode .bg-blue-50 {
+            background: #1e293b !important;
+        }
+        body.dark-mode .bg-blue-100 {
+            background: #1e293b !important;
+        }
+
+        /* ===== CONTACT SECTION - SIEMPRE OSCURO ===== */
+        #contact {
+            background: #0a0c10 !important;
+            color: white !important;
+        }
+        #contact .bg-slate-50 {
+            background: #11141b !important;
+        }
+        #contact .border-slate-100 {
+            border-color: #1e293b !important;
+        }
+        #contact .text-slate-500,
+        #contact .text-slate-600 {
+            color: #94a3b8 !important;
+        }
+        #contact .text-slate-900 {
+            color: #f1f5f9 !important;
+        }
+        #contact .text-slate-400 {
+            color: #64748b !important;
+        }
+        #contact input,
+        #contact select,
+        #contact textarea {
+            background: #0d0f14 !important;
+            border-color: #1e293b !important;
+            color: white !important;
+        }
+        #contact input::placeholder,
+        #contact textarea::placeholder {
+            color: #475569 !important;
+        }
+        body.dark-mode #contact {
+            background: #0a0c10 !important;
+        }
+
+        /* ===== GLASS NAV ===== */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            transition: background 0.5s ease;
+        }
+
+        /* ===== GRADIENT TEXTS ===== */
+        .gradient-text {
+            background: linear-gradient(135deg, #1e293b 0%, #2563eb 60%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .gradient-text-light {
+            background: linear-gradient(135deg, #f1f5f9 0%, #93c5fd 60%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ===== HERO GLOWS ===== */
+        .hero-glow {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle at 30% 50%, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+            top: -200px;
+            left: -200px;
+        }
+        .hero-glow-2 {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle at 70% 80%, rgba(96, 165, 250, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+            bottom: -100px;
+            right: -100px;
+        }
+
+        /* ===== CARDS ===== */
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 30px 60px -20px rgba(37, 99, 235, 0.25);
+        }
+        body.dark-mode .card-hover:hover {
+            box-shadow: 0 30px 60px -20px rgba(37, 99, 235, 0.15);
+        }
+
+        .service-icon {
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .group:hover .service-icon {
+            transform: scale(1.1) rotate(-4deg);
+            background: #2563eb;
+            color: white;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        .pulse-ring {
+            animation: pulse-ring 2.5s ease-in-out infinite;
+        }
+        @keyframes pulse-ring {
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.15);
+            }
+            50% {
+                box-shadow: 0 0 0 20px rgba(37, 99, 235, 0);
+            }
+        }
+
+        .float-node {
+            animation: float-node 4s ease-in-out infinite;
+        }
+        .float-node-2 {
+            animation: float-node 5s ease-in-out infinite 1s;
+        }
+        .float-node-3 {
+            animation: float-node 4.5s ease-in-out infinite 0.5s;
+        }
+        .float-node-4 {
+            animation: float-node 5.5s ease-in-out infinite 1.5s;
+        }
+        .float-node-5 {
+            animation: float-node 4.2s ease-in-out infinite 0.8s;
+        }
+        .float-node-6 {
+            animation: float-node 4.8s ease-in-out infinite 1.2s;
+        }
+
+        @keyframes float-node {
+            0%,
+            100% {
+                transform: translate(0px, 0px);
+            }
+            25% {
+                transform: translate(8px, -12px);
+            }
+            50% {
+                transform: translate(-6px, 10px);
+            }
+            75% {
+                transform: translate(10px, 6px);
+            }
+        }
+
+        .scroll-indicator {
+            animation: scroll-bounce 2s ease-in-out infinite;
+        }
+        @keyframes scroll-bounce {
+            0%,
+            100% {
+                transform: translateY(0);
+                opacity: 0.4;
+            }
+            50% {
+                transform: translateY(8px);
+                opacity: 1;
+            }
+        }
+
+        .blog-card-img {
+            transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .group:hover .blog-card-img {
+            transform: scale(1.05);
+        }
+
+        .tech-grid {
+            background-image:
+                linear-gradient(rgba(37, 99, 235, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(37, 99, 235, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        /* ===== RIPPLE EFFECT ===== */
+        .ripple {
+            position: relative;
+            overflow: hidden;
+        }
+        .ripple-effect {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(0);
+            animation: ripple-anim 0.6s linear;
+            pointer-events: none;
+        }
+        @keyframes ripple-anim {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        /* ===== TOGGLE SWITCH ===== */
+        .theme-toggle {
+            width: 48px;
+            height: 28px;
+            background: #e2e8f0;
+            border-radius: 14px;
+            position: relative;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            flex-shrink: 0;
+        }
+        body.dark-mode .theme-toggle {
+            background: #1e293b;
+        }
+        .theme-toggle .thumb {
+            width: 22px;
+            height: 22px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+        body.dark-mode .theme-toggle .thumb {
+            transform: translateX(20px);
+            background: #2563eb;
+        }
+        .theme-toggle .thumb svg {
+            width: 14px;
+            height: 14px;
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            transition: opacity 0.3s ease;
+        }
+        .theme-toggle .sun {
+            opacity: 1;
+        }
+        body.dark-mode .theme-toggle .sun {
+            opacity: 0;
+        }
+        .theme-toggle .moon {
+            opacity: 0;
+        }
+        body.dark-mode .theme-toggle .moon {
+            opacity: 1;
+        }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #2563eb, #60a5fa);
+            border-radius: 10px;
+        }
+        body.dark-mode ::-webkit-scrollbar-track {
+            background: #0a0c10;
+        }
+
+        /* ===== CANVAS ===== */
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .relative-z-1 {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== UTILITY ===== */
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
+        .product-tag {
+            background: linear-gradient(135deg, #dbeafe, #eff6ff);
+            border: 1px solid rgba(37, 99, 235, 0.12);
+        }
+        body.dark-mode .product-tag {
+            background: #1e293b !important;
+            border-color: #334155 !important;
+            color: #93c5fd !important;
+        }
+        .glow-border {
+            position: relative;
+            overflow: hidden;
+        }
+        .glow-border::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(135deg, #2563eb, #60a5fa, #818cf8, #2563eb);
+            background-size: 300% 300%;
+            border-radius: inherit;
+            z-index: -1;
+            animation: shimmer-border 4s ease-in-out infinite;
+            opacity: 0.3;
+            transition: opacity 0.4s;
+        }
+        .glow-border:hover::before {
+            opacity: 1;
+        }
+        @keyframes shimmer-border {
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== PARTICLE CANVAS ===== -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- ===== NAV ===== -->
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#hero" class="flex items-center gap-3 group transition-all duration-300 active:scale-95">
+                <img src="assets/logo.png" alt="POSTI" class="h-10 md:h-14 w-auto group-hover:opacity-80 transition-opacity" />
+                <span class="text-3xl md:text-4xl font-black tracking-tighter text-slate-900 group-hover:text-blue-600 transition-colors">POSTI</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
+                <a href="#services" class="hover:text-blue-600 transition relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-600 after:transition-all hover:after:w-full">Services</a>
+                <a href="#capabilities" class="hover:text-blue-600 transition relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-600 after:transition-all hover:after:w-full">Capabilities</a>
+                <a href="#products" class="hover:text-blue-600 transition relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-600 after:transition-all hover:after:w-full">Products</a>
+                <a href="#about" class="hover:text-blue-600 transition relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-600 after:transition-all hover:after:w-full">About</a>
+                <a href="#blog" class="hover:text-blue-600 transition relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-600 after:transition-all hover:after:w-full">Insights</a>
+                <a href="#contact" class="ml-4 bg-slate-900 text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-blue-600 transition-all hover:shadow-[0_10px_25px_-5px_rgba(37,99,235,0.4)] active:scale-95">Contact</a>
+
+                <!-- Toggle Switch -->
+                <div class="theme-toggle" id="themeToggle" role="button" aria-label="Toggle dark mode">
+                    <div class="thumb">
+                        <svg class="sun" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                        <svg class="moon" fill="currentColor" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section id="hero" class="relative min-h-screen flex items-center pt-32 pb-20 px-6 overflow-hidden tech-grid relative-z-1">
+        <div class="hero-glow"></div>
+        <div class="hero-glow-2"></div>
+
+        <div class="max-w-7xl mx-auto w-full relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2">
+                    <div class="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 px-4 py-2 rounded-full mb-6">
+                        <span class="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></span>
+                        <span class="text-xs font-bold text-blue-700 tracking-widest uppercase">Engineering for Intelligent Business</span>
+                    </div>
+
+                    <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[1.05] mb-8">
+                        <span class="text-slate-900">We Engineer</span><br />
+                        <span class="gradient-text">Intelligent Business</span>
+                    </h1>
+
+                    <p class="text-xl text-slate-500 max-w-xl leading-relaxed mb-10">
+                        POSTI transforms organizations through disciplined engineering — AI, Data, Automation, Cybersecurity, Cloud, and Intelligent Software Platforms. We build solutions that endure.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="ripple group relative inline-flex items-center justify-center bg-slate-900 text-white px-8 py-4 rounded-full font-bold overflow-hidden transition-all duration-300 hover:bg-blue-600 hover:shadow-[0_15px_35px_-10px_rgba(37,99,235,0.5)] active:scale-95">
+                            <span class="relative z-10">Start Your Project</span>
+                            <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+                        </a>
+                        <a href="#capabilities" class="ripple border-2 border-slate-200 text-slate-700 px-8 py-4 rounded-full font-bold hover:border-blue-600 hover:text-blue-600 transition-all duration-300">
+                            Explore Capabilities
+                        </a>
+                    </div>
+
+                    <div class="flex items-center gap-8 mt-12 pt-8 border-t border-slate-100">
+                        <div>
+                            <p class="text-3xl font-black text-slate-900 stat-number">6+</p>
+                            <p class="text-xs text-slate-400 font-medium uppercase tracking-widest">Products</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-black text-slate-900 stat-number">8</p>
+                            <p class="text-xs text-slate-400 font-medium uppercase tracking-widest">Core Capabilities</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-black text-slate-900 stat-number">∞</p>
+                            <p class="text-xs text-slate-400 font-medium uppercase tracking-widest">Engineering Impact</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== 3D NETWORK VISUAL - MEJORADO ===== -->
+                <div class="lg:w-1/2 flex justify-center">
+                    <div class="relative w-[420px] h-[420px] md:w-[500px] md:h-[500px]">
+                        <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+                            <defs>
+                                <radialGradient id="heroGlowBig">
+                                    <stop offset="0%" stop-color="#2563eb" stop-opacity="0.25" />
+                                    <stop offset="100%" stop-color="#2563eb" stop-opacity="0" />
+                                </radialGradient>
+                                <linearGradient id="lineGradBig" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#2563eb" stop-opacity="0.15" />
+                                    <stop offset="100%" stop-color="#60a5fa" stop-opacity="0.6" />
+                                </linearGradient>
+                                <filter id="glowFilter">
+                                    <feGaussianBlur stdDeviation="3" result="blur" />
+                                    <feMerge>
+                                        <feMergeNode in="blur" />
+                                        <feMergeNode in="SourceGraphic" />
+                                    </feMerge>
+                                </filter>
+                            </defs>
+
+                            <!-- Glow behind -->
+                            <circle cx="250" cy="250" r="200" fill="url(#heroGlowBig)" />
+
+                            <!-- Central node -->
+                            <circle cx="250" cy="250" r="42" fill="#2563eb" opacity="0.08" class="pulse-ring" />
+                            <circle cx="250" cy="250" r="28" fill="#2563eb" opacity="0.15" />
+                            <circle cx="250" cy="250" r="16" fill="#2563eb" />
+                            <text x="250" y="255" text-anchor="middle" fill="white" font-size="11" font-weight="800" font-family="Inter">POSTI</text>
+
+                            <!-- ===== NODOS CON NOMBRES COMPLETOS Y FLOAT RANDOM ===== -->
+
+                            <!-- Node 1: Artificial Intelligence -->
+                            <line x1="250" y1="250" x2="130" y2="100" stroke="url(#lineGradBig)" stroke-width="2.5" stroke-dasharray="5 7" />
+                            <g class="float-node">
+                                <circle cx="130" cy="100" r="14" fill="#3b82f6" filter="url(#glowFilter)" />
+                                <text x="130" y="105" text-anchor="middle" fill="white" font-size="8" font-weight="700" font-family="Inter">AI</text>
+                            </g>
+                            <text x="130" y="78" text-anchor="middle" fill="#1e293b" font-size="9" font-weight="600" font-family="Inter" class="node-label">Artificial Intelligence</text>
+
+                            <!-- Node 2: Data Engineering -->
+                            <line x1="250" y1="250" x2="380" y2="90" stroke="url(#lineGradBig)" stroke-width="2.5" stroke-dasharray="5 7" />
+                            <g class="float-node-2">
+                                <circle cx="380" cy="90" r="14" fill="#60a5fa" filter="url(#glowFilter)" />
+                                <text x="380" y="95" text-anchor="middle" fill="white" font-size="8" font-weight="700" font-family="Inter">DE</text>
+                            </g>
+                            <text x="380" y="68" text-anchor="middle" fill="#1e293b" font-size="9" font-weight="600" font-family="Inter" class="node-label">Data Engineering</text>
+
+                            <!-- Node 3: Cloud Engineering -->
+                            <line x1="250" y1="250" x2="430" y2="280" stroke="url(#lineGradBig)" stroke-width="2.5" stroke-dasharray="5 7" />
+                            <g class="float-node-3">
+                                <circle cx="430" cy="280" r="14" fill="#93c5fd" filter="url(#glowFilter)" />
+                                <text x="430" y="285" text-anchor="middle" fill="white" font-size="8" font-weight="700" font-family="Inter">CE</text>
+                            </g>
+                            <text x="430" y="308" text-anchor="middle" fill="#1e293b" font-size="9" font-weight="600" font-family="Inter" class="node-label">Cloud Engineering</text>
+
+                            <!-- Node 4: Cyber Security -->
+                            <line x1="250" y1="250" x2="350" y2="410" stroke="url(#lineGradBig)" stroke-width="2.5" stroke-dasharray="5 7" />
+                            <g class="float-node-4">
+                                <circle cx="350" cy="410" r="14" fill="#2563eb" filter="url(#glowFilter)" />
+                                <text x="350" y="415" text-anchor="middle" fill="white" font-size="8" font-weight="700" font-family="Inter">CS</text>
+                            </g>
+                            <text x="350" y="438" text-anchor="middle" fill="#1e293b" font-size="9" font-weight="600" font-family="Inter" class="node-label">Cyber Security</text>
+
+                            <!-- Node 5: Business Automation -->
+                            <line x1="250" y1="250" x2="110" y2="390" stroke="url(#lineGradBig)" stroke-width="2.5" stroke-dasharray="5 7" />
+                            <g class="float-node-5">
+                                <circle cx="110" cy="390" r="14" fill="#3b82f6" filter="url(#glowFilter)" />
+                                <text x="110" y="395" text-anchor="middle" fill="white" font-size="8" font-weight="700" font-family="Inter">BA</text>
+                            </g>
+                            <text x="110" y="418" text-anchor="middle" fill="#1e293b" font-size="9" font-weight="600" font-family="Inter" class="node-label">Business Automation</text>
+
+                            <!-- Node 6: Software Architecture -->
+                            <line x1="250" y1="250" x2="60" y2="180" stroke="url(#lineGradBig)" stroke-width="2.5" stroke-dasharray="5 7" />
+                            <g class="float-node-6">
+                                <circle cx="60" cy="180" r="14" fill="#60a5fa" filter="url(#glowFilter)" />
+                                <text x="60" y="185" text-anchor="middle" fill="white" font-size="8" font-weight="700" font-family="Inter">SA</text>
+                            </g>
+                            <text x="60" y="155" text-anchor="middle" fill="#1e293b" font-size="9" font-weight="600" font-family="Inter" class="node-label">Software Architecture</text>
+
+                            <!-- Small orbiting dots (más) -->
+                            <circle cx="250" cy="50" r="4" fill="#2563eb" opacity="0.4" class="float-node" />
+                            <circle cx="450" cy="140" r="4" fill="#3b82f6" opacity="0.4" class="float-node-2" />
+                            <circle cx="470" cy="350" r="4" fill="#60a5fa" opacity="0.4" class="float-node-3" />
+                            <circle cx="380" cy="460" r="4" fill="#2563eb" opacity="0.4" class="float-node-4" />
+                            <circle cx="160" cy="450" r="4" fill="#3b82f6" opacity="0.4" class="float-node-5" />
+                            <circle cx="40" cy="250" r="4" fill="#60a5fa" opacity="0.4" class="float-node-6" />
+                            <circle cx="80" cy="80" r="4" fill="#2563eb" opacity="0.4" class="float-node" />
+                            <circle cx="420" cy="50" r="4" fill="#3b82f6" opacity="0.4" class="float-node-3" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-400 z-10">
+            <span class="text-[10px] font-medium uppercase tracking-widest">Scroll</span>
+            <svg class="w-5 h-5 scroll-indicator" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES / CAPABILITIES ===== -->
+    <section id="capabilities" class="py-28 px-6 scroll-mt-20 bg-white relative-z-1">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span class="text-blue-600 font-bold tracking-[0.2em] text-xs uppercase">Our Engineering Disciplines</span>
+                <h2 class="text-4xl md:text-5xl font-black mt-4 mb-6 tracking-tight">
+                    <span class="text-slate-900">Built on </span>
+                    <span class="gradient-text">Engineering Excellence</span>
+                </h2>
+                <p class="text-slate-500 text-lg leading-relaxed">
+                    We apply disciplined engineering across eight core capabilities — each one designed to solve real operational challenges and create lasting business value.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Capability 1 -->
+                <div class="group p-8 rounded-2xl border border-slate-100 bg-white card-hover glow-border">
+                    <div class="service-icon w-14 h-14 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">AI Engineering</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Intelligent systems that automate work, augment decisions, and reduce operational friction.</p>
+                </div>
+
+                <!-- Capability 2 -->
+                <div class="group p-8 rounded-2xl border border-slate-100 bg-white card-hover glow-border">
+                    <div class="service-icon w-14 h-14 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" /></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">Data Engineering</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Robust pipelines, analytics platforms, and operational intelligence for better decisions.</p>
+                </div>
+
+                <!-- Capability 3 -->
+                <div class="group p-8 rounded-2xl border border-slate-100 bg-white card-hover glow-border">
+                    <div class="service-icon w-14 h-14 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">Business Automation</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Workflow automation, process optimization, and digital transformation at scale.</p>
+                </div>
+
+                <!-- Capability 4 -->
+                <div class="group p-8 rounded-2xl border border-slate-100 bg-white card-hover glow-border">
+                    <div class="service-icon w-14 h-14 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">Cybersecurity</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Security by design — authentication, authorization, encryption, and operational resilience.</p>
+                </div>
+
+                <!-- Capability 5 -->
+                <div class="group p-8 rounded-2xl border border-slate-100 bg-white card-hover glow-border">
+                    <div class="service-icon w-14 h-14 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" /></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">Cloud Engineering</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Cloud-native architectures with portability, containerization, and infrastructure as code.</p>
+                </div>
+
+                <!-- Capability 6 -->
+                <div class="group p-8 rounded-2xl border border-slate-100 bg-white card-hover glow-border">
+                    <div class="service-icon w-14 h-14 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" /></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">Software Architecture</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Modular, maintainable systems designed for long-term sustainability and evolution.</p>
+                </div>
+
+                <!-- Capability 7 -->
+                <div class="group p-8 rounded-2xl border border-slate-100 bg-white card-hover glow-border">
+                    <div class="service-icon w-14 h-14 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4zm0 5c0 2.21 3.582 4 8 4s8-1.79 8-4" /></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">DevOps & Platform</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Automated deployments, observability, resilience, and continuous delivery pipelines.</p>
+                </div>
+
+                <!-- Capability 8 -->
+                <div class="group p-8 rounded-2xl border border-slate-100 bg-white card-hover glow-border">
+                    <div class="service-icon w-14 h-14 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">Custom Software</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Tailored solutions built with engineering rigor — from MVP to global-scale platforms.</p>
+                </div>
+            </div>
+
+            <!-- Strategic note -->
+            <div class="mt-16 p-8 bg-blue-50/50 rounded-3xl border border-blue-100 max-w-4xl mx-auto text-center">
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    <span class="font-bold text-slate-900">Every capability is an engineering discipline.</span> We don't chase trends — we build reusable knowledge, components, platforms, and products that compound value over time.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRODUCTS ===== -->
+    <section id="products" class="py-28 px-6 scroll-mt-20 bg-slate-50 relative-z-1">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span class="text-blue-600 font-bold tracking-[0.2em] text-xs uppercase">Our Product Division</span>
+                <h2 class="text-4xl md:text-5xl font-black mt-4 mb-6 tracking-tight">
+                    <span class="text-slate-900">Engineering Expertise </span>
+                    <span class="gradient-text">Transformed into Products</span>
+                </h2>
+                <p class="text-slate-500 text-lg leading-relaxed">
+                    Every product represents accumulated engineering experience converted into reusable intellectual property.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1: RestoQuest -->
+                <div class="group bg-white rounded-3xl overflow-hidden border border-slate-100 card-hover">
+                    <div class="h-48 bg-gradient-to-br from-blue-600/20 to-indigo-600/10 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-6xl font-black text-blue-600/20">RQ</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="product-tag text-[10px] font-black text-blue-700 px-3 py-1 rounded-full uppercase tracking-wider">Live</span>
+                            <span class="text-[10px] font-medium text-slate-400 uppercase tracking-widest">Platform</span>
+                        </div>
+                        <h4 class="text-2xl font-bold text-slate-900 mb-2">RestoQuest</h4>
+                        <p class="text-sm text-slate-500 leading-relaxed mb-4">Intelligent restaurant management and guest engagement platform.</p>
+                        <a href="#" class="text-blue-600 font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                            Learn more
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 2: CanCheX -->
+                <div class="group bg-white rounded-3xl overflow-hidden border border-slate-100 card-hover">
+                    <div class="h-48 bg-gradient-to-br from-emerald-600/20 to-teal-600/10 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-6xl font-black text-emerald-600/20">CX</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="product-tag text-[10px] font-black text-blue-700 px-3 py-1 rounded-full uppercase tracking-wider">Live</span>
+                            <span class="text-[10px] font-medium text-slate-400 uppercase tracking-widest">Platform</span>
+                        </div>
+                        <h4 class="text-2xl font-bold text-slate-900 mb-2">CanCheX</h4>
+                        <p class="text-sm text-slate-500 leading-relaxed mb-4">Quality control and compliance inspection platform for manufacturing.</p>
+                        <a href="#" class="text-blue-600 font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                            Learn more
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 3: SIMS -->
+                <div class="group bg-white rounded-3xl overflow-hidden border border-slate-100 card-hover">
+                    <div class="h-48 bg-gradient-to-br from-purple-600/20 to-pink-600/10 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-6xl font-black text-purple-600/20">SIMS</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="product-tag text-[10px] font-black text-blue-700 px-3 py-1 rounded-full uppercase tracking-wider">Live</span>
+                            <span class="text-[10px] font-medium text-slate-400 uppercase tracking-widest">Platform</span>
+                        </div>
+                        <h4 class="text-2xl font-bold text-slate-900 mb-2">SIMS</h4>
+                        <p class="text-sm text-slate-500 leading-relaxed mb-4">Smart inventory management system for retail and logistics operations.</p>
+                        <a href="#" class="text-blue-600 font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                            Learn more
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 4: DownTrack -->
+                <div class="group bg-white rounded-3xl overflow-hidden border border-slate-100 card-hover">
+                    <div class="h-48 bg-gradient-to-br from-orange-600/20 to-amber-600/10 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-6xl font-black text-orange-600/20">DT</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="product-tag text-[10px] font-black text-blue-700 px-3 py-1 rounded-full uppercase tracking-wider">Live</span>
+                            <span class="text-[10px] font-medium text-slate-400 uppercase tracking-widest">Platform</span>
+                        </div>
+                        <h4 class="text-2xl font-bold text-slate-900 mb-2">DownTrack</h4>
+                        <p class="text-sm text-slate-500 leading-relaxed mb-4">Supply chain tracking and logistics optimization platform.</p>
+                        <a href="#" class="text-blue-600 font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                            Learn more
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 5: ReBuy -->
+                <div class="group bg-white rounded-3xl overflow-hidden border border-slate-100 card-hover">
+                    <div class="h-48 bg-gradient-to-br from-cyan-600/20 to-sky-600/10 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-6xl font-black text-cyan-600/20">RB</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="product-tag text-[10px] font-black text-blue-700 px-3 py-1 rounded-full uppercase tracking-wider">Live</span>
+                            <span class="text-[10px] font-medium text-slate-400 uppercase tracking-widest">Platform</span>
+                        </div>
+                        <h4 class="text-2xl font-bold text-slate-900 mb-2">ReBuy</h4>
+                        <p class="text-sm text-slate-500 leading-relaxed mb-4">Circular commerce and recommerce platform for sustainable retail.</p>
+                        <a href="#" class="text-blue-600 font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                            Learn more
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 6: Coming Soon -->
+                <div class="group bg-white rounded-3xl overflow-hidden border-2 border-dashed border-blue-200 card-hover">
+                    <div class="h-48 bg-gradient-to-br from-slate-200/50 to-slate-300/30 relative overflow-hidden flex items-center justify-center">
+                        <div class="text-center">
+                            <svg class="w-12 h-12 text-slate-300 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg>
+                            <span class="text-sm font-bold text-slate-400 uppercase tracking-widest">In Development</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="bg-slate-100 text-slate-500 text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider">Coming</span>
+                            <span class="text-[10px] font-medium text-slate-400 uppercase tracking-widest">SaaS</span>
+                        </div>
+                        <h4 class="text-2xl font-bold text-slate-400 mb-2">Next Platform</h4>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4">Our next product is being engineered from accumulated expertise.</p>
+                        <span class="text-slate-300 font-bold text-sm">Stay tuned →</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Strategy evolution note -->
+            <div class="mt-16 max-w-4xl mx-auto">
+                <div class="bg-white rounded-3xl p-10 border border-slate-100 shadow-sm">
+                    <h4 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4">Our Engineering Maturity Model</h4>
+                    <div class="flex flex-wrap items-center gap-2 text-xs font-medium text-slate-600">
+                        <span class="px-4 py-2 bg-slate-100 rounded-full">Engineering Services</span>
+                        <span class="text-slate-300">→</span>
+                        <span class="px-4 py-2 bg-slate-100 rounded-full">Engineering Knowledge</span>
+                        <span class="text-slate-300">→</span>
+                        <span class="px-4 py-2 bg-slate-100 rounded-full">Reusable Components</span>
+                        <span class="text-slate-300">→</span>
+                        <span class="px-4 py-2 bg-slate-100 rounded-full">Platforms</span>
+                        <span class="text-slate-300">→</span>
+                        <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full font-bold">Products</span>
+                        <span class="text-slate-300">→</span>
+                        <span class="px-4 py-2 bg-slate-100 rounded-full">SaaS</span>
+                        <span class="text-slate-300">→</span>
+                        <span class="px-4 py-2 bg-slate-100 rounded-full">AI Agents</span>
+                        <span class="text-slate-300">→</span>
+                        <span class="px-4 py-2 bg-slate-100 rounded-full">Digital Workers</span>
+                        <span class="text-slate-300">→</span>
+                        <span class="px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full font-bold">Industry Ecosystems</span>
+                    </div>
+                    <p class="text-xs text-slate-400 mt-4 text-center">Each stage builds upon the previous one. No stage replaces another.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- ===== ABOUT / PHILOSOPHY ===== -->
+    <section id="about" class="py-28 px-6 scroll-mt-20 bg-white relative-z-1">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-20 items-start">
+                <div>
+                    <span class="text-blue-600 font-bold tracking-[0.2em] text-xs uppercase">Our Philosophy</span>
+                    <h2 class="text-4xl md:text-5xl font-black mt-4 mb-8 tracking-tight">
+                        <span class="text-slate-900">Engineering </span>
+                        <span class="gradient-text">Before Technology</span>
+                    </h2>
+                    <p class="text-lg text-slate-500 leading-relaxed mb-6">
+                        POSTI is not a software company. We are an <span class="font-bold text-slate-900">engineering company</span>. Technology is the set of tools we choose — engineering is the discipline that determines how they are applied.
+                    </p>
+                    <p class="text-slate-500 leading-relaxed mb-8">
+                        Every project begins with understanding the business problem, not with selecting a framework. Business value always precedes technical elegance.
+                    </p>
+
+                    <div class="space-y-4 mb-10">
+                        <div class="flex items-start gap-4">
+                            <div class="mt-1 w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                            </div>
+                            <p class="text-sm text-slate-600"><span class="font-bold">Simple solutions</span> outperform sophisticated ones. Complexity is introduced only when justified.</p>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="mt-1 w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                            </div>
+                            <p class="text-sm text-slate-600"><span class="font-bold">Build once, reuse everywhere.</span> Code becomes libraries, libraries become frameworks, frameworks become platforms, platforms become products.</p>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="mt-1 w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                            </div>
+                            <p class="text-sm text-slate-600"><span class="font-bold">Security by design.</span> Not added at the end — every decision considers authentication, authorization, encryption, and resilience.</p>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="ripple inline-flex items-center gap-2 bg-slate-900 text-white px-8 py-4 rounded-full font-bold hover:bg-blue-600 transition-all hover:shadow-[0_10px_30px_-5px_rgba(37,99,235,0.4)] active:scale-95">
+                        Partner with POSTI
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+                    </a>
+                </div>
+
+                <!-- ===== 4 CARDS UNIFORMES ===== -->
+                <div class="grid grid-cols-2 gap-5">
+                    <!-- Card 1: Revenue as Outcome -->
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 flex flex-col h-full">
+                        <div class="text-3xl font-black text-blue-600 mb-1">$0</div>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Revenue as Outcome</p>
+                        <p class="text-sm text-slate-500 mt-2 leading-relaxed flex-1">Revenue is essential — but it's the result of delivering value, not the sole objective.</p>
+                    </div>
+
+                    <!-- Card 2: Knowledge Compounds -->
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 flex flex-col h-full">
+                        <div class="text-3xl font-black text-blue-600 mb-1">∞</div>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Knowledge Compounds</p>
+                        <p class="text-sm text-slate-500 mt-2 leading-relaxed flex-1">Every engagement generates reusable knowledge that strengthens future work.</p>
+                    </div>
+
+                    <!-- Card 3: Engineering First -->
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 flex flex-col h-full">
+                        <div class="text-3xl font-black text-blue-600 mb-1">⚙️</div>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Engineering First</p>
+                        <p class="text-sm text-slate-500 mt-2 leading-relaxed flex-1">We measure success by outcomes, not complexity. Customers remember outcomes, not technologies.</p>
+                    </div>
+
+                    <!-- Card 4: Trust Earned -->
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 flex flex-col h-full">
+                        <div class="text-3xl font-black text-blue-600 mb-1">🤝</div>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Trust Earned</p>
+                        <p class="text-sm text-slate-500 mt-2 leading-relaxed flex-1">Trust is earned through consistent execution and engineering excellence.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BLOG ===== -->
+    <section id="blog" class="py-28 px-6 scroll-mt-20 bg-slate-50 relative-z-1">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div>
+                    <span class="text-blue-600 font-bold tracking-[0.2em] text-xs uppercase">Knowledge Hub</span>
+                    <h2 class="text-4xl md:text-5xl font-black mt-4 tracking-tight">
+                        <span class="text-slate-900">Strategic </span>
+                        <span class="gradient-text">Insights</span>
+                    </h2>
+                    <p class="text-slate-500 mt-4 text-lg">Engineering insights, data intelligence frameworks, and executive perspectives.</p>
+                </div>
+                <a href="blog.html" class="group flex items-center gap-2 text-slate-900 font-bold hover:text-blue-600 transition-colors">
+                    View All Articles
+                    <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                </a>
+            </div>
+
+            <div id="latest-posts-container" class="grid md:grid-cols-3 gap-8">
+                <p class="col-span-full text-center text-slate-400 animate-pulse">Loading insights...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA BANNER ===== -->
+    <section class="py-20 px-6 bg-slate-900 relative-z-1">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-black text-white mb-6">Engineering for <span class="gradient-text-light">Intelligent Business</span></h2>
+            <p class="text-slate-400 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
+                Every service, product, and decision reflects our commitment to engineering excellence and lasting value.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contact" class="ripple bg-blue-600 text-white px-10 py-4 rounded-full font-bold hover:bg-blue-500 transition-all transform hover:scale-105 active:scale-95 shadow-[0_10px_30px_-5px_rgba(37,99,235,0.3)]">
+                    Start a Project
+                </a>
+                <a href="#capabilities" class="ripple border border-slate-700 text-slate-300 px-10 py-4 rounded-full font-bold hover:border-slate-400 hover:text-white transition-all">
+                    View Capabilities
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT - SIEMPRE OSCURO ===== -->
+    <section id="contact" class="py-28 px-6 scroll-mt-20 relative-z-1">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-20 items-start">
+                <div>
+                    <span class="text-blue-400 font-bold tracking-[0.2em] text-xs uppercase">Let's Engineer Together</span>
+                    <h2 class="text-4xl md:text-5xl font-black mt-4 mb-8 tracking-tight text-white">
+                        Ready to <span class="gradient-text-light">Scale Your Vision?</span>
+                    </h2>
+                    <p class="text-slate-400 text-lg leading-relaxed mb-10">
+                        Join forward-thinking enterprises leveraging POSTI to streamline operations, modernize ecosystems, and create scalable digital solutions.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0 mt-0.5 border border-blue-500/30">
+                                <svg class="w-3 h-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                            </div>
+                            <div>
+                                <p class="font-bold text-white">Priority Response</p>
+                                <p class="text-sm text-slate-400">Within 24 business hours. Direct access to senior consultants.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0 mt-0.5 border border-blue-500/30">
+                                <svg class="w-3 h-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                            </div>
+                            <div>
+                                <p class="font-bold text-white">Strategic Audit</p>
+                                <p class="text-sm text-slate-400">15-minute consultation to map your digital maturity roadmap.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0 mt-0.5 border border-blue-500/30">
+                                <svg class="w-3 h-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                            </div>
+                            <div>
+                                <p class="font-bold text-white">Engineering Partnership</p>
+                                <p class="text-sm text-slate-400">We don't just consult — we engineer solutions that endure.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-[#11141b] p-8 md:p-12 rounded-3xl border border-white/5">
+                    <form action="#" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="text-[10px] font-bold text-slate-500 uppercase tracking-widest ml-1">Full Name</label>
+                                <input type="text" placeholder="John Doe" class="w-full bg-[#0d0f14] border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all" />
+                            </div>
+                            <div>
+                                <label class="text-[10px] font-bold text-slate-500 uppercase tracking-widest ml-1">Corporate Email</label>
+                                <input type="email" placeholder="john@company.com" class="w-full bg-[#0d0f14] border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all" />
+                            </div>
+                        </div>
+                        <div>
+                            <label class="text-[10px] font-bold text-slate-500 uppercase tracking-widest ml-1">Service Interest</label>
+                            <select class="w-full bg-[#0d0f14] border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all appearance-none cursor-pointer">
+                                <option>AI Engineering</option>
+                                <option>Data Engineering</option>
+                                <option>Business Automation</option>
+                                <option>Cybersecurity</option>
+                                <option>Cloud Engineering</option>
+                                <option>Software Architecture</option>
+                                <option>DevOps & Platform</option>
+                                <option>Custom Software Development</option>
+                                <option>Product Development</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="text-[10px] font-bold text-slate-500 uppercase tracking-widest ml-1">Project Overview</label>
+                            <textarea rows="4" placeholder="Tell us about your goals, challenges, or vision..." class="w-full bg-[#0d0f14] border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all"></textarea>
+                        </div>
+                        <button class="ripple group w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_15px_30px_-5px_rgba(37,99,235,0.4)] active:scale-[0.98] flex items-center justify-center gap-3">
+                            <span>Secure Your Strategy Audit</span>
+                            <svg class="w-5 h-5 opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+                        </button>
+                        <p class="text-center text-[10px] text-slate-500 mt-2">By submitting, you agree to our Privacy Policy.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="py-12 px-6 border-t border-slate-200 bg-white relative-z-1">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <img src="assets/logo.png" alt="POSTI" class="h-10 w-auto grayscale opacity-40" />
+                <span class="text-2xl font-black text-slate-400">POSTI</span>
+            </div>
+            <div class="flex flex-wrap items-center gap-6 text-xs text-slate-500">
+                <a href="legal/privacy-policy.html" class="hover:text-slate-900 transition">Privacy Policy</a>
+                <a href="legal/legal-notice.html" class="hover:text-slate-900 transition">Legal Notice</a>
+                <span class="text-slate-300">|</span>
+                <span class="text-slate-400">© 2026 POSTI</span>
+                <span class="text-slate-300 font-medium text-[10px] uppercase tracking-widest">Engineering for Intelligent Business</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== SCRIPTS ===== -->
+
+    <!-- ===== PARTICLE SYSTEM ===== -->
+    <script>
+        (function() {
+            const canvas = document.getElementById('particle-canvas');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            let w, h;
+
+            function resize() {
+                w = canvas.width = window.innerWidth;
+                h = canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * w;
+                    this.y = Math.random() * h;
+                    this.size = Math.random() * 2.5 + 0.5;
+                    this.speedX = (Math.random() - 0.5) * 0.4;
+                    this.speedY = (Math.random() - 0.5) * 0.4;
+                    this.opacity = Math.random() * 0.5 + 0.1;
+                }
+                update() {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+                    if (this.x < 0 || this.x > w) this.speedX *= -1;
+                    if (this.y < 0 || this.y > h) this.speedY *= -1;
+                }
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(37, 99, 235, ${this.opacity})`;
+                    ctx.fill();
+                    // Glow
+                    ctx.shadowColor = 'rgba(37, 99, 235, 0.15)';
+                    ctx.shadowBlur = 10;
+                    ctx.fill();
+                    ctx.shadowBlur = 0;
+                }
+            }
+
+            function initParticles(count = 120) {
+                particles = [];
+                for (let i = 0; i < count; i++) {
+                    particles.push(new Particle());
+                }
+            }
+
+            function connectParticles() {
+                const maxDist = 150;
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < maxDist) {
+                            const opacity = (1 - dist / maxDist) * 0.15;
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.strokeStyle = `rgba(37, 99, 235, ${opacity})`;
+                            ctx.lineWidth = 0.5;
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+
+            function animateParticles() {
+                ctx.clearRect(0, 0, w, h);
+                particles.forEach(p => p.update());
+                particles.forEach(p => p.draw());
+                connectParticles();
+                requestAnimationFrame(animateParticles);
+            }
+
+            initParticles(140);
+            animateParticles();
+
+            // Redimensionar partículas cuando cambia el tamaño de la ventana
+            window.addEventListener('resize', () => {
+                resize();
+                initParticles(140);
+            });
+        })();
+    </script>
+
+    <!-- ===== THEME TOGGLE ===== -->
+    <script>
+        (function() {
+            const toggle = document.getElementById('themeToggle');
+            const body = document.body;
+
+            // Check saved preference
+            const saved = localStorage.getItem('posti-theme');
+            if (saved === 'dark') {
+                body.classList.add('dark-mode');
+            }
+
+            toggle.addEventListener('click', function() {
+                body.classList.toggle('dark-mode');
+                const isDark = body.classList.contains('dark-mode');
+                localStorage.setItem('posti-theme', isDark ? 'dark' : 'light');
+            });
+        })();
+    </script>
+
+    <!-- ===== RIPPLE EFFECT ===== -->
+    <script>
+        (function() {
+            document.querySelectorAll('.ripple').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    const rect = this.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const size = Math.max(rect.width, rect.height) * 0.6;
+                    const ripple = document.createElement('span');
+                    ripple.className = 'ripple-effect';
+                    ripple.style.width = ripple.style.height = size + 'px';
+                    ripple.style.left = (x - size / 2) + 'px';
+                    ripple.style.top = (y - size / 2) + 'px';
+                    this.appendChild(ripple);
+                    setTimeout(() => ripple.remove(), 600);
+                });
+            });
+        })();
+    </script>
+
+    <!-- ===== BLOG LOADER ===== -->
+    <script>
+        async function loadLatestPosts() {
+            const container = document.getElementById('latest-posts-container');
+            if (!container) return;
+
+            try {
+                const syncID = Date.now();
+                const response = await fetch(`./data.json?v=${syncID}`, { cache: 'no-store' });
+                if (!response.ok) throw new Error('Failed to load insights');
+
+                const posts = await response.json();
+                container.innerHTML = '';
+
+                const latest = posts
+                    .sort((a, b) => new Date(b.date) - new Date(a.date))
+                    .slice(0, 3);
+
+                if (latest.length === 0) {
+                    container.innerHTML = '<p class="col-span-full text-center text-slate-400 italic">No insights available.</p>';
+                    return;
+                }
+
+                container.innerHTML = latest.map(post => {
+                    let displayDate = 'Jan 01, 2026';
+                    try {
+                        const parts = post.date.split('-');
+                        if (parts.length === 3) {
+                            const d = new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]));
+                            displayDate = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric',
+                                year: 'numeric' });
+                        }
+                    } catch (_) { /* fallback */ }
+
+                    return `
+                    <article class="group bg-white rounded-3xl overflow-hidden border border-slate-100 card-hover">
+                        <div class="h-52 bg-slate-900 overflow-hidden relative">
+                            <div class="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-indigo-900/20 z-10"></div>
+                            <img src="${post.image}" class="blog-card-img w-full h-full object-cover" alt="${post.title}" />
+                        </div>
+                        <div class="p-8">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="bg-blue-50 text-blue-600 text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-tighter">${post.category || 'Insight'}</span>
+                                <span class="text-slate-400 text-[10px] font-medium uppercase tracking-widest">${displayDate}</span>
+                            </div>
+                            <h3 class="font-bold text-2xl mb-3 group-hover:text-blue-600 transition-colors leading-tight line-clamp-2 text-slate-900">${post.title}</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed mb-5 line-clamp-3">${post.excerpt}</p>
+                            <a href="${post.url}" class="inline-flex items-center gap-2 text-blue-600 font-bold text-sm group-hover:gap-3 transition-all">
+                                Read Analysis
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                            </a>
+                        </div>
+                    </article>
+                    `;
+                }).join('');
+
+            } catch (error) {
+                console.warn('Blog loader:', error);
+                container.innerHTML = `
+                    <div class="col-span-full text-center text-slate-400">
+                        <p class="text-sm">Insights are loading. Please refresh.</p>
+                    </div>
+                `;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadLatestPosts);
+    </script>
+
+</body>
+</html>
