@@ -1,0 +1,38 @@
+/var/www/postitech.com/
+├── index.html
+├── blog.html
+├── robots.txt
+├── sitemap.xml
+├── .htaccess
+├── assets/
+│   ├── logo.png
+│   ├── favicon.ico
+│   └── products/
+│       ├── restoquest-hero.png
+│       ├── canchex-hero.png
+│       ├── sims-hero.png
+│       ├── downtrack-hero.png
+│       └── rebuy-hero.png
+├── capabilities/
+│   ├── ai-engineering.html
+│   ├── data-engineering.html
+│   ├── business-automation.html
+│   ├── cybersecurity.html
+│   ├── cloud-engineering.html
+│   ├── software-architecture.html
+│   ├── devops.html
+│   └── custom-software.html
+├── products/
+│   ├── restoquest.html
+│   ├── canchex.html
+│   ├── sims.html
+│   ├── downtrack.html
+│   └── rebuy.html
+├── legal/
+│   ├── privacy-policy.html
+│   └── legal-notice.html
+├── blog/
+│   ├── 2026/
+│   │   └── 08/
+│   └── feed.xml
+└── data.json

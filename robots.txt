@@ -1,0 +1,88 @@
+# ============================================================
+# robots.txt - POSTI (postitech.com)
+# Engineering for Intelligent Business
+# Prince Rupert, British Columbia, Canada
+# ============================================================
+
+User-agent: *
+Allow: /
+
+# ============================================================
+# SITEMAP - Site map location
+# ============================================================
+Sitemap: https://postitech.com/sitemap.xml
+
+# ============================================================
+# CRAWL DELAY - Respect server resources
+# ============================================================
+Crawl-delay: 1
+
+# ============================================================
+# BLOCK UNNECESSARY RESOURCES
+# ============================================================
+Disallow: /assets/*.tmp$
+Disallow: /assets/*.log$
+
+# ============================================================
+# GOOGLEBOT OPTIMIZATION
+# ============================================================
+User-agent: Googlebot
+Allow: /
+# Googlebot understands JavaScript (for dynamic blog)
+# Do not block JS/CSS assets
+
+# ============================================================
+# BINGBOT OPTIMIZATION
+# ============================================================
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+# ============================================================
+# WHATSAPP / META BOT OPTIMIZATION
+# ============================================================
+User-agent: MetaBot
+Allow: /
+
+# ============================================================
+# PREVENT EXCESSIVE SCRAPING
+# ============================================================
+User-agent: AhrefsBot
+Crawl-delay: 10
+User-agent: SemrushBot
+Crawl-delay: 10
+User-agent: MJ12bot
+Crawl-delay: 10
+
+# ============================================================
+# IMAGES - Allow all for blog
+# ============================================================
+User-agent: Googlebot-Image
+Allow: /assets/*.png
+Allow: /assets/*.jpg
+Allow: /assets/*.jpeg
+Allow: /assets/*.webp
+Allow: /assets/*.svg
+
+# ============================================================
+# EXCLUDE SENSITIVE DIRECTORIES
+# ============================================================
+# /legal/ is public content (privacy policy, legal notice) linked from
+# every page's footer and listed in sitemap.xml -- it must stay crawlable.
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /backup/
+Disallow: /config/
+
+# ============================================================
+# ADDITIONAL SECURITY RULES
+# ============================================================
+# Prevent Google from indexing test versions
+Disallow: /test/
+Disallow: /staging/
+Disallow: /dev/
+
+# ============================================================
+# NEWS FEED (for future implementation)
+# ============================================================
+# Sitemap: https://postitech.com/blog/feed.xml

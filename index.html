@@ -1,12 +1,66 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="assets/logo.png" as="image" />
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>POSTI | Engineering for Intelligent Business</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
     <style>
+        <!-- ===== LOCAL METADATA ===== -->
+        <title>POSTI | Engineering for Intelligent Business — Prince Rupert, BC</title>
+        <meta name="description" content="POSTI is an engineering company in Prince Rupert, BC, helping organizations become more intelligent through AI, Data, Automation, Cybersecurity, and Cloud Engineering." />
+
+        <!-- Local Business Schema -->
+        <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "POSTI",
+        "description": "Engineering company specializing in AI, Data, Automation, Cybersecurity, Cloud, and Software Engineering.",
+        "url": "https://postitech.com",
+        "telephone": "+1-672-799-0277",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Prince Rupert",
+            "addressRegion": "British Columbia",
+            "addressCountry": "CA"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 54.3155,
+            "longitude": -130.3210
+        },
+        "sameAs": [
+            "https://linkedin.com/company/postitech",
+            "https://github.com/postitech"
+        ],
+        "priceRange": "$$$",
+        "openingHours": "Mo-Fr 09:00-17:00",
+        "areaServed": {
+            "@type": "City",
+            "name": "Prince Rupert"
+        }
+        }
+        </script>
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="POSTI | Engineering for Intelligent Business" />
+        <meta property="og:description" content="Engineering company in Prince Rupert, BC. AI, Data, Automation, Cybersecurity, Cloud Engineering." />
+        <meta property="og:url" content="https://postitech.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_CA" />
+
+        <!-- Geo Tags -->
+        <meta name="geo.placename" content="Prince Rupert, British Columbia" />
+        <meta name="geo.region" content="CA-BC" />
+        <meta name="geo.position" content="54.3155;-130.3210" />
+        <meta name="ICBM" content="54.3155, -130.3210" />
+
         /* ===== BASE ===== */
         * {
             margin: 0;
@@ -97,7 +151,7 @@
             background: #1e293b !important;
         }
 
-        /* ===== CONTACT SECTION - SIEMPRE OSCURO ===== */
+        /* ===== CONTACT SECTION - ALWAYS DARK ===== */
         #contact {
             background: #0a0c10 !important;
             color: white !important;
@@ -509,7 +563,7 @@
                     </div>
                 </div>
 
-                <!-- ===== 3D NETWORK VISUAL - MEJORADO ===== -->
+                <!-- ===== 3D NETWORK VISUAL - IMPROVED ===== -->
                 <div class="lg:w-1/2 flex justify-center">
                     <div class="relative w-[420px] h-[420px] md:w-[500px] md:h-[500px]">
                         <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
@@ -540,7 +594,7 @@
                             <circle cx="250" cy="250" r="16" fill="#2563eb" />
                             <text x="250" y="255" text-anchor="middle" fill="white" font-size="11" font-weight="800" font-family="Inter">POSTI</text>
 
-                            <!-- ===== NODOS CON NOMBRES COMPLETOS Y FLOAT RANDOM ===== -->
+                            <!-- ===== NODOS AND FLOAT RANDOM ===== -->
 
                             <!-- Node 1: Artificial Intelligence -->
                             <line x1="250" y1="250" x2="130" y2="100" stroke="url(#lineGradBig)" stroke-width="2.5" stroke-dasharray="5 7" />
@@ -605,10 +659,36 @@
             </div>
         </div>
 
+        
         <!-- Scroll indicator -->
         <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-400 z-10">
             <span class="text-[10px] font-medium uppercase tracking-widest">Scroll</span>
             <svg class="w-5 h-5 scroll-indicator" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
+        </div>
+    </section>
+
+    <!-- ===== FAQ SECTION (Atomic Answers) ===== -->
+    <section class="py-16 px-6 bg-slate-50/50 relative-z-1">
+        <div class="max-w-4xl mx-auto">
+            <h3 class="text-2xl font-bold text-slate-900 mb-8 text-center">Frequently Asked Questions</h3>
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-2xl border border-slate-100">
+                    <p class="font-bold text-slate-900">What engineering services does POSTI offer in Prince Rupert?</p>
+                    <p class="text-slate-600 text-sm mt-1">POSTI provides AI Engineering, Data Engineering, Business Automation, Cybersecurity, Cloud Engineering, Software Architecture, DevOps, and Custom Software Development to businesses in Prince Rupert and British Columbia.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-100">
+                    <p class="font-bold text-slate-900">Where is POSTI located?</p>
+                    <p class="text-slate-600 text-sm mt-1">POSTI is headquartered in Prince Rupert, British Columbia, Canada, serving clients across the Northwest and beyond.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-100">
+                    <p class="font-bold text-slate-900">What is POSTI's engineering philosophy?</p>
+                    <p class="text-slate-600 text-sm mt-1">POSTI is an engineering company, not a software company. We apply disciplined engineering to solve business problems — technology is the tool, engineering is the discipline.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-100">
+                    <p class="font-bold text-slate-900">What products has POSTI developed?</p>
+                    <p class="text-slate-600 text-sm mt-1">POSTI's product portfolio includes RestoQuest (restaurant management), CanCheX (quality control), SIMS (inventory management), DownTrack (supply chain), and ReBuy (circular commerce).</p>
+                </div>
+            </div>
         </div>
     </section>
 
