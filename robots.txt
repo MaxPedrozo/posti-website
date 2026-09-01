@@ -1,5 +1,5 @@
 # ============================================================
-# robots.txt - POSTI (postitech.com)
+# robots.txt - POSTI (postisolutions.com)
 # Engineering for Intelligent Business
 # Prince Rupert, British Columbia, Canada
 # ============================================================
@@ -10,7 +10,7 @@ Allow: /
 # ============================================================
 # SITEMAP - Site map location
 # ============================================================
-Sitemap: https://postitech.com/sitemap.xml
+Sitemap: https://postisolutions.com/sitemap.xml
 
 # ============================================================
 # CRAWL DELAY - Respect server resources
@@ -85,4 +85,4 @@ Disallow: /dev/
 # ============================================================
 # NEWS FEED (for future implementation)
 # ============================================================
-# Sitemap: https://postitech.com/blog/feed.xml
+# Sitemap: https://postisolutions.com/blog/feed.xml

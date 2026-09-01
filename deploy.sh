@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ============================================================
-# deploy.sh - postitech.com
+# deploy.sh - postisolutions.com
 # Run this ON THE VPS (not locally). Pulls the repo into a private
 # working copy and rsyncs only the public site into the Nginx docroot.
 #
@@ -13,7 +13,7 @@
 set -euo pipefail
 
 REPO_DIR="$HOME/repos/posti-website"
-DOCROOT="/var/www/postitech.com"
+DOCROOT="/var/www/postisolutions.com"
 
 if [ ! -d "$REPO_DIR/.git" ]; then
   git clone https://github.com/MaxPedrozo/posti-website.git "$REPO_DIR"

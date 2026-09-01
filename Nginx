@@ -1,19 +1,50 @@
 # ============================================================
-# Nginx - postitech.com
+# Nginx - postisolutions.com
 # Static site (mirrors the restoquest.app server pattern)
-# Deploy path: /var/www/postitech.com
+# Deploy path: /var/www/postisolutions.com
 # ============================================================
+
+# ------------------------------------------------------------
+# Cloudflare real-IP restoration: postisolutions.com is proxied
+# through Cloudflare (orange cloud), so without this, every request
+# in the access log / $remote_addr shows a Cloudflare edge IP
+# instead of the real visitor. List current at:
+# https://www.cloudflare.com/ips/  (re-check occasionally, it changes)
+# ------------------------------------------------------------
+set_real_ip_from 173.245.48.0/20;
+set_real_ip_from 103.21.244.0/22;
+set_real_ip_from 103.22.200.0/22;
+set_real_ip_from 103.31.4.0/22;
+set_real_ip_from 141.101.64.0/18;
+set_real_ip_from 108.162.192.0/18;
+set_real_ip_from 190.93.240.0/20;
+set_real_ip_from 188.114.96.0/20;
+set_real_ip_from 197.234.240.0/22;
+set_real_ip_from 198.41.128.0/17;
+set_real_ip_from 162.158.0.0/15;
+set_real_ip_from 104.16.0.0/13;
+set_real_ip_from 104.24.0.0/14;
+set_real_ip_from 172.64.0.0/13;
+set_real_ip_from 131.0.72.0/22;
+set_real_ip_from 2400:cb00::/32;
+set_real_ip_from 2606:4700::/32;
+set_real_ip_from 2803:f800::/32;
+set_real_ip_from 2405:b500::/32;
+set_real_ip_from 2405:8100::/32;
+set_real_ip_from 2a06:98c0::/29;
+set_real_ip_from 2c0f:f248::/32;
+real_ip_header CF-Connecting-IP;
 
 server {
     listen 80;
     listen [::]:80;
-    server_name postitech.com www.postitech.com;
-    root /var/www/postitech.com;
+    server_name postisolutions.com www.postisolutions.com;
+    root /var/www/postisolutions.com;
     index index.html;
 
     # Logs
-    access_log /var/log/nginx/postitech.com-access.log;
-    error_log  /var/log/nginx/postitech.com-error.log;
+    access_log /var/log/nginx/postisolutions.com-access.log;
+    error_log  /var/log/nginx/postisolutions.com-error.log;
 
     # Gzip
     gzip on;
@@ -31,8 +62,8 @@ server {
     add_header Permissions-Policy "geolocation=(), microphone=(), camera=()" always;
 
     # www -> non-www (run this AFTER certbot has issued a cert for both hosts)
-    if ($host = www.postitech.com) {
-        return 301 https://postitech.com$request_uri;
+    if ($host = www.postisolutions.com) {
+        return 301 https://postisolutions.com$request_uri;
     }
 
     # Cache static assets
@@ -82,7 +113,7 @@ server {
 }
 
 # After DNS is live, run:
-#   sudo certbot --nginx -d postitech.com -d www.postitech.com
+#   sudo certbot --nginx -d postisolutions.com -d www.postisolutions.com
 # Certbot will rewrite this file: add a "listen 443 ssl" server block with the
 # certificate paths, and an HTTP->HTTPS redirect on port 80. Re-check the
 # www -> non-www block still works after that edit.

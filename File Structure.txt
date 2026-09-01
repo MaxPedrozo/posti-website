@@ -1,4 +1,4 @@
-/var/www/postitech.com/
+/var/www/postisolutions.com/
 ├── index.html
 ├── blog.html
 ├── robots.txt

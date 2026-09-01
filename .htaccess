@@ -1,5 +1,5 @@
 # ============================================================
-# .htaccess - POSTI (postitech.com)
+# .htaccess - POSTI (postisolutions.com)
 # Engineering for Intelligent Business
 # Prince Rupert, British Columbia, Canada
 # ============================================================
@@ -32,7 +32,7 @@
 # ============================================================
 RewriteEngine On
 RewriteCond %{HTTP_HOST} ^www\.postitech\.com [NC]
-RewriteRule ^(.*)$ https://postitech.com/$1 [L,R=301]
+RewriteRule ^(.*)$ https://postisolutions.com/$1 [L,R=301]
 
 # ============================================================
 # REDIRECT HTTP TO HTTPS
@@ -73,4 +73,4 @@ Options -Indexes
 # ============================================================
 # REDIRECT OLD URLS (if needed)
 # ============================================================
-# Redirect 301 /old-page https://postitech.com/new-page
+# Redirect 301 /old-page https://postisolutions.com/new-page

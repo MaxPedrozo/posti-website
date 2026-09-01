@@ -11,19 +11,19 @@
 
     <!-- HOMEPAGE -->
     <url>
-        <loc>https://postitech.com/</loc>
+        <loc>https://postisolutions.com/</loc>
         <lastmod>2026-08-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <image:image>
-            <image:loc>https://postitech.com/assets/logo.png</image:loc>
+            <image:loc>https://postisolutions.com/assets/logo.png</image:loc>
             <image:title>POSTI Logo - Engineering for Intelligent Business</image:title>
         </image:image>
     </url>
 
     <!-- BLOG / INSIGHTS -->
     <url>
-        <loc>https://postitech.com/blog.html</loc>
+        <loc>https://postisolutions.com/blog.html</loc>
         <lastmod>2026-08-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
@@ -31,7 +31,7 @@
 
     <!-- CONTACT -->
     <url>
-        <loc>https://postitech.com/#contact</loc>
+        <loc>https://postisolutions.com/#contact</loc>
         <lastmod>2026-08-27</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
@@ -45,79 +45,79 @@
     <!-- ============================================================ -->
     <!--
     <url>
-        <loc>https://postitech.com/products/restoquest</loc>
+        <loc>https://postisolutions.com/products/restoquest</loc>
         <lastmod>2026-08-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://postitech.com/products/canchex</loc>
+        <loc>https://postisolutions.com/products/canchex</loc>
         <lastmod>2026-08-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://postitech.com/products/sims</loc>
+        <loc>https://postisolutions.com/products/sims</loc>
         <lastmod>2026-08-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://postitech.com/products/downtrack</loc>
+        <loc>https://postisolutions.com/products/downtrack</loc>
         <lastmod>2026-08-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://postitech.com/products/rebuy</loc>
+        <loc>https://postisolutions.com/products/rebuy</loc>
         <lastmod>2026-08-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://postitech.com/capabilities/ai-engineering</loc>
+        <loc>https://postisolutions.com/capabilities/ai-engineering</loc>
         <lastmod>2026-08-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://postitech.com/capabilities/data-engineering</loc>
+        <loc>https://postisolutions.com/capabilities/data-engineering</loc>
         <lastmod>2026-08-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://postitech.com/capabilities/business-automation</loc>
+        <loc>https://postisolutions.com/capabilities/business-automation</loc>
         <lastmod>2026-08-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://postitech.com/capabilities/cybersecurity</loc>
+        <loc>https://postisolutions.com/capabilities/cybersecurity</loc>
         <lastmod>2026-08-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://postitech.com/capabilities/cloud-engineering</loc>
+        <loc>https://postisolutions.com/capabilities/cloud-engineering</loc>
         <lastmod>2026-08-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://postitech.com/capabilities/software-architecture</loc>
+        <loc>https://postisolutions.com/capabilities/software-architecture</loc>
         <lastmod>2026-08-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://postitech.com/capabilities/devops</loc>
+        <loc>https://postisolutions.com/capabilities/devops</loc>
         <lastmod>2026-08-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://postitech.com/capabilities/custom-software</loc>
+        <loc>https://postisolutions.com/capabilities/custom-software</loc>
         <lastmod>2026-08-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
@@ -130,7 +130,7 @@
 
     <!-- Privacy Policy -->
     <url>
-        <loc>https://postitech.com/legal/privacy-policy</loc>
+        <loc>https://postisolutions.com/legal/privacy-policy</loc>
         <lastmod>2026-08-27</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
@@ -138,7 +138,7 @@
 
     <!-- Legal Notice -->
     <url>
-        <loc>https://postitech.com/legal/legal-notice</loc>
+        <loc>https://postisolutions.com/legal/legal-notice</loc>
         <lastmod>2026-08-27</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
@@ -149,19 +149,19 @@
     <!-- ============================================================ -->
     <!--
     <url>
-        <loc>https://postitech.com/blog/article-1</loc>
+        <loc>https://postisolutions.com/blog/article-1</loc>
         <lastmod>2026-08-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://postitech.com/blog/article-2</loc>
+        <loc>https://postisolutions.com/blog/article-2</loc>
         <lastmod>2026-08-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://postitech.com/blog/article-3</loc>
+        <loc>https://postisolutions.com/blog/article-3</loc>
         <lastmod>2026-08-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
