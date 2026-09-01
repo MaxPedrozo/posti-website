@@ -77,6 +77,8 @@
             background: #0a0c10;
             color: #f1f5f9;
         }
+
+        /* ===== BASE ELEMENTS ===== */
         body.dark-mode .bg-white {
             background: #11141b !important;
         }
@@ -105,20 +107,21 @@
         body.dark-mode .bg-slate-50 {
             background: #0d0f14 !important;
         }
+
+        /* ===== NAVIGATION ===== */
         body.dark-mode .glass-nav {
             background: rgba(10, 12, 16, 0.92) !important;
             backdrop-filter: blur(16px) saturate(180%);
             border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
         }
-        body.dark-mode .card-hover {
-            background: #11141b !important;
-            border-color: #1e293b !important;
+        body.dark-mode .glass-nav a {
+            color: #94a3b8 !important;
         }
-        body.dark-mode .product-tag {
-            background: #1e293b !important;
-            border-color: #334155 !important;
-            color: #93c5fd !important;
+        body.dark-mode .glass-nav a:hover {
+            color: #60a5fa !important;
         }
+
+        /* ===== GRADIENTS ===== */
         body.dark-mode .gradient-text {
             background: linear-gradient(135deg, #60a5fa 0%, #2563eb 60%, #818cf8 100%);
             -webkit-background-clip: text;
@@ -131,15 +134,16 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        body.dark-mode .glass-nav a {
-            color: #94a3b8 !important;
-        }
-        body.dark-mode .glass-nav a:hover {
-            color: #60a5fa !important;
-        }
-        body.dark-mode footer {
-            background: #0a0c10 !important;
+
+        /* ===== CARDS & COMPONENTS ===== */
+        body.dark-mode .card-hover {
+            background: #11141b !important;
             border-color: #1e293b !important;
+        }
+        body.dark-mode .product-tag {
+            background: #1e293b !important;
+            border-color: #334155 !important;
+            color: #93c5fd !important;
         }
         body.dark-mode .bg-slate-900 {
             background: #0a0c10 !important;
@@ -149,6 +153,133 @@
         }
         body.dark-mode .bg-blue-100 {
             background: #1e293b !important;
+        }
+
+        /* ===== FOOTER ===== */
+        body.dark-mode footer {
+            background: #0a0c10 !important;
+            border-color: #1e293b !important;
+        }
+
+        /* ============================================================
+        NEW: NODE LABELS IN SVG (Hero Network)
+        ============================================================ */
+        body.dark-mode .node-label {
+            fill: #94a3b8 !important;
+        }
+
+        /* ============================================================
+        NEW: FAQ SECTION
+        ============================================================ */
+        body.dark-mode .faq-section {
+            background: #0d0f14 !important;
+            border-color: #1e293b !important;
+        }
+        body.dark-mode .faq-subtitle {
+            color: #94a3b8 !important;
+        }
+        body.dark-mode .faq-question {
+            color: #f1f5f9 !important;
+        }
+        body.dark-mode .faq-answer {
+            color: #94a3b8 !important;
+        }
+        body.dark-mode .faq-answer strong {
+            color: #cbd5e1 !important;
+        }
+        body.dark-mode .faq-badge {
+            background: #1e293b !important;
+            color: #93c5fd !important;
+        }
+        body.dark-mode .faq-card {
+            background: #11141b !important;
+            border-color: #1e293b !important;
+        }
+        body.dark-mode .faq-card:hover {
+            border-color: #2563eb !important;
+            box-shadow: 0 8px 30px -10px rgba(37, 99, 235, 0.25) !important;
+        }
+
+        /* ============================================================
+        NEW: CAPABILITY CARDS
+        ============================================================ */
+        body.dark-mode .capability-card {
+            background: #11141b !important;
+            border-color: #1e293b !important;
+        }
+        body.dark-mode .capability-card h4 {
+            color: #f1f5f9 !important;
+        }
+        body.dark-mode .capability-card p {
+            color: #94a3b8 !important;
+        }
+
+        /* ============================================================
+        NEW: PRODUCT CARDS
+        ============================================================ */
+        body.dark-mode .product-card {
+            background: #11141b !important;
+            border-color: #1e293b !important;
+        }
+        body.dark-mode .product-card h4 {
+            color: #f1f5f9 !important;
+        }
+        body.dark-mode .product-card p {
+            color: #94a3b8 !important;
+        }
+
+        /* ============================================================
+        NEW: BLOG CARDS
+        ============================================================ */
+        body.dark-mode .blog-card {
+            background: #11141b !important;
+            border-color: #1e293b !important;
+        }
+        body.dark-mode .blog-card h3 {
+            color: #f1f5f9 !important;
+        }
+        body.dark-mode .blog-card p {
+            color: #94a3b8 !important;
+        }
+
+        /* ============================================================
+        NEW: ABOUT SECTION CARDS
+        ============================================================ */
+        body.dark-mode .about-card {
+            background: #11141b !important;
+            border-color: #1e293b !important;
+        }
+        body.dark-mode .about-card p {
+            color: #94a3b8 !important;
+        }
+        body.dark-mode .about-card .label {
+            color: #64748b !important;
+        }
+
+        /* ============================================================
+        NEW: GENERAL TEXT FIXES
+        ============================================================ */
+        body.dark-mode .text-slate-700 {
+            color: #cbd5e1 !important;
+        }
+        body.dark-mode .text-slate-800 {
+            color: #f1f5f9 !important;
+        }
+        body.dark-mode .text-slate-600 {
+            color: #94a3b8 !important;
+        }
+        body.dark-mode .border-slate-200 {
+            border-color: #1e293b !important;
+        }
+
+        /* ============================================================
+        NEW: FAQ NOTE
+        ============================================================ */
+        body.dark-mode .faq-note {
+            color: #64748b !important;
+        }
+        body.dark-mode .faq-note span {
+            color: #94a3b8 !important;
         }
 
         /* ===== CONTACT SECTION - ALWAYS DARK ===== */
@@ -667,31 +798,7 @@
         </div>
     </section>
 
-    <!-- ===== FAQ SECTION (Atomic Answers) ===== -->
-    <section class="py-16 px-6 bg-slate-50/50 relative-z-1">
-        <div class="max-w-4xl mx-auto">
-            <h3 class="text-2xl font-bold text-slate-900 mb-8 text-center">Frequently Asked Questions</h3>
-            <div class="space-y-4">
-                <div class="bg-white p-6 rounded-2xl border border-slate-100">
-                    <p class="font-bold text-slate-900">What engineering services does POSTI offer in Prince Rupert?</p>
-                    <p class="text-slate-600 text-sm mt-1">POSTI provides AI Engineering, Data Engineering, Business Automation, Cybersecurity, Cloud Engineering, Software Architecture, DevOps, and Custom Software Development to businesses in Prince Rupert and British Columbia.</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl border border-slate-100">
-                    <p class="font-bold text-slate-900">Where is POSTI located?</p>
-                    <p class="text-slate-600 text-sm mt-1">POSTI is headquartered in Prince Rupert, British Columbia, Canada, serving clients across the Northwest and beyond.</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl border border-slate-100">
-                    <p class="font-bold text-slate-900">What is POSTI's engineering philosophy?</p>
-                    <p class="text-slate-600 text-sm mt-1">POSTI is an engineering company, not a software company. We apply disciplined engineering to solve business problems — technology is the tool, engineering is the discipline.</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl border border-slate-100">
-                    <p class="font-bold text-slate-900">What products has POSTI developed?</p>
-                    <p class="text-slate-600 text-sm mt-1">POSTI's product portfolio includes RestoQuest (restaurant management), CanCheX (quality control), SIMS (inventory management), DownTrack (supply chain), and ReBuy (circular commerce).</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    
     <!-- ===== SERVICES / CAPABILITIES ===== -->
     <section id="capabilities" class="py-28 px-6 scroll-mt-20 bg-white relative-z-1">
         <div class="max-w-7xl mx-auto">
@@ -781,9 +888,79 @@
             </div>
 
             <!-- Strategic note -->
-            <div class="mt-16 p-8 bg-blue-50/50 rounded-3xl border border-blue-100 max-w-4xl mx-auto text-center">
-                <p class="text-sm text-slate-600 leading-relaxed">
-                    <span class="font-bold text-slate-900">Every capability is an engineering discipline.</span> We don't chase trends — we build reusable knowledge, components, platforms, and products that compound value over time.
+            <div class="mt-16 p-8 bg-blue-50/50 dark:bg-blue-950/30 rounded-3xl border border-blue-100 dark:border-blue-900/30 max-w-4xl mx-auto text-center">
+                <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <span class="font-bold text-slate-900 dark:text-slate-100">Every capability is an engineering discipline.</span> We don't chase trends — we build reusable knowledge, components, platforms, and products that compound value over time.
+                </p>
+            </div>
+        </div>
+    </section>
+
+        <!-- ===== FAQ SECTION (Atomic Answers) ===== -->
+    <section class="py-20 px-6 bg-slate-50/70 relative-z-1 border-y border-slate-100/50">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-14">
+                <span class="text-blue-600 font-bold tracking-[0.2em] text-xs uppercase">Knowledge Base</span>
+                <h2 class="text-3xl md:text-4xl font-black mt-3 tracking-tight">
+                    <span class="text-slate-900">Answers to </span>
+                    <span class="gradient-text">Common Questions</span>
+                </h2>
+                <p class="faq-subtitle text-slate-500 dark:text-slate-300 mt-3 text-sm max-w-2xl mx-auto">
+                    Quick answers about our engineering services, location, and philosophy — 
+                    designed for quick reference and search visibility.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-5">
+                <!-- Question 1 -->
+                <div class="bg-white p-7 rounded-2xl border border-slate-100 hover:border-blue-200 transition-all hover:shadow-[0_8px_30px_-10px_rgba(37,99,235,0.15)] group">
+                    <div class="flex items-start gap-4">
+                        <span class="w-8 h-8 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0 text-sm font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors">Q</span>
+                        <div>
+                            <p class="font-bold text-slate-800 text-sm">What engineering services does POSTI offer in Prince Rupert?</p>
+                            <p class="text-slate-500 text-sm mt-1.5 leading-relaxed">POSTI provides AI Engineering, Data Engineering, Business Automation, Cybersecurity, Cloud Engineering, Software Architecture, DevOps, and Custom Software Development to businesses in Prince Rupert and British Columbia.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="bg-white p-7 rounded-2xl border border-slate-100 hover:border-blue-200 transition-all hover:shadow-[0_8px_30px_-10px_rgba(37,99,235,0.15)] group">
+                    <div class="flex items-start gap-4">
+                        <span class="w-8 h-8 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0 text-sm font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors">Q</span>
+                        <div>
+                            <p class="font-bold text-slate-800 text-sm">Where is POSTI located?</p>
+                            <p class="text-slate-500 text-sm mt-1.5 leading-relaxed">POSTI is headquartered in <strong class="text-slate-700">Prince Rupert, British Columbia, Canada</strong>, serving clients across the Northwest and beyond.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="bg-white p-7 rounded-2xl border border-slate-100 hover:border-blue-200 transition-all hover:shadow-[0_8px_30px_-10px_rgba(37,99,235,0.15)] group">
+                    <div class="flex items-start gap-4">
+                        <span class="w-8 h-8 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0 text-sm font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors">Q</span>
+                        <div>
+                            <p class="font-bold text-slate-800 text-sm">What is POSTI's engineering philosophy?</p>
+                            <p class="text-slate-500 text-sm mt-1.5 leading-relaxed">POSTI is an engineering company, not a software company. We apply disciplined engineering to solve business problems — technology is the tool, engineering is the discipline.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="bg-white p-7 rounded-2xl border border-slate-100 hover:border-blue-200 transition-all hover:shadow-[0_8px_30px_-10px_rgba(37,99,235,0.15)] group">
+                    <div class="flex items-start gap-4">
+                        <span class="w-8 h-8 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0 text-sm font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors">Q</span>
+                        <div>
+                            <p class="font-bold text-slate-800 text-sm">What products has POSTI developed?</p>
+                            <p class="text-slate-500 text-sm mt-1.5 leading-relaxed">POSTI's product portfolio includes <strong class="text-slate-700">RestoQuest</strong> (restaurant management), <strong class="text-slate-700">CanCheX</strong> (quality control), <strong class="text-slate-700">SIMS</strong> (inventory), <strong class="text-slate-700">DownTrack</strong> (supply chain), and <strong class="text-slate-700">ReBuy</strong> (circular commerce).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subtle note -->
+            <div class="text-center mt-8">
+                <p class="text-[11px] text-slate-400 dark:text-slate-300">
+                    ⚡ Questions designed for quick answers — <span class="text-slate-500 dark:text-slate-400">optimized for search visibility</span>
                 </p>
             </div>
         </div>
