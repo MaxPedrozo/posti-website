@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
+# SUPERSEDED: this VPS deploys postisolutions.com via Coolify
+# (git-based, Dockerfile build) -- Coolify handles pulling and
+# building the repo itself. This script's rsync-to-docroot flow
+# assumed a bare-metal Nginx, which this box doesn't run. Kept
+# for reference only.
 # ============================================================
 # deploy.sh - postisolutions.com
 # Run this ON THE VPS (not locally). Pulls the repo into a private

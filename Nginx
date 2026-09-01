@@ -1,3 +1,10 @@
+# ------------------------------------------------------------
+# SUPERSEDED: this VPS runs Coolify + Traefik, not a bare-metal
+# Nginx. postisolutions.com is deployed as a Coolify Application
+# (Dockerfile build strategy) with domains set in Coolify's UI --
+# see Dockerfile / nginx.docker.conf instead. Kept here for
+# reference only.
+# ------------------------------------------------------------
 # ============================================================
 # Nginx - postisolutions.com
 # Static site (mirrors the restoquest.app server pattern)
