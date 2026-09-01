@@ -39,7 +39,7 @@
 
     <!-- ============================================================ -->
     <!-- PRODUCTS & CAPABILITIES (add each URL here only once the page  -->
-    <!-- actually exists at that path -- see File Structure.txt.        -->
+    <!-- actually exists at that path — see File Structure.txt.        -->
     <!-- Today these are just #anchors inside index.html, not routes,   -->
     <!-- so listing them would 404 for crawlers.                        -->
     <!-- ============================================================ -->
